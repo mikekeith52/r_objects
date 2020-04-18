@@ -1,14 +1,14 @@
 # disaggregation_R
 How to disaggregate a count in a dataset by a unique id in R
 
-During a project completed at Florida State, I had to figure out a way to count the number of doctor's visits for 30,000 unique patients. For example, if patient 1 is in the dataset 5 times, I needed a count from 1 to 5, and this needed to be repeated for each patient. I searched online for a solution on R, but realized that no one has a good way to do this. And especially without importing several libraries and packages. I thought of my own solution on base R and am sharing the script in this repository so it can be of use to someone else.
+During a project completed at Florida State, I had to figure out a way to count the number of doctor's visits for 30,000 unique patients. For example, if patient 1 is in the dataset 5 times, I needed a count from 1 to 5, and this needed to be repeated for each patient (this is the equivalent of a posexplode in Hive, and can be accomplished easily in pandas since the 0.25.3 version update). I searched online for a solution on R, but realized that no one has a good way to do this. And especially without importing several libraries and packages. Below is my solution.  
 
-The weaknesses of this solution are that it is not straightforward to read and it takes a long time to run on big datasets. It will work for very large datasets though.
+The weaknesses of this solution are that it is not straightforward to read and it takes a long time to run on big datasets. It will work for very large datasets though.  
 
-Once a count of the visits is given, then other operations can be facilitated, such as a running total of dollars spent until the patient's last visit, etc.
+Once a count of the visits is given, then other operations can be facilitated, such as a running total of dollars spent until the patient's last visit, etc.  
 
 # Data format
-For this solution to work, the data needs to be formatted such that there are several unique individuals (patients/customers/etc.) all tagged with their own unique marker. There needs to be some indication of time/sequence in the data so that it can be sorted correctly (otherwise, the counts are randomly applied). That's it. The rest can be done in base R.
+For this solution to work, the data needs to be formatted such that there are several unique individuals (patients/customers/etc.) all tagged with their own unique marker. There needs to be some indication of time/sequence in the data so that it can be sorted correctly (otherwise, the counts are randomly applied). That's it. The rest can be done in base R.  
 
 # Solution
 
