@@ -13,7 +13,8 @@ pca.out<-prcomp(D,center=T,scale=T)
 # Cumulative variance
 pcs.var<-pca.out$sd^2
 pve<-pcs.var/sum(pcs.var)
-# Two PCs ~ 21% of the variance (1/5)
+
+# see how much of the cumulative variance is captured through each successive PC
 cumsum(pve)
 
 # See Rotation
